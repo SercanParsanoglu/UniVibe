@@ -5,10 +5,12 @@ class _InputEmail extends StatefulWidget {
   final TextEditingController textEditingController;
   final String? hintText;
   final InputDecoration? inputDecoration;
+  final OutlineInputBorder? outlineInputBorder;
 
   const _InputEmail({
     super.key,
     required this.textEditingController,
+    this.outlineInputBorder,
     this.hintText,
     this.inputDecoration,
   });
@@ -49,7 +51,8 @@ class __InputEmailState extends State<_InputEmail> {
       autovalidateMode: AutovalidateMode.onUserInteraction,
       controller: textEditingController,
       focusNode: _textFieldFocus,
-      decoration: widget.inputDecoration ?? _customInputDecoration(),
+      decoration: widget.inputDecoration ??
+          _customInputDecoration(widget.outlineInputBorder),
       validator: FormBuilderValidators.compose(
         [
           FormBuilderValidators.required(errorText: "Email alanı zorunludur."),
@@ -59,8 +62,10 @@ class __InputEmailState extends State<_InputEmail> {
     );
   }
 
-  InputDecoration _customInputDecoration() {
+  InputDecoration _customInputDecoration(
+      OutlineInputBorder? outlineInputBorder) {
     return InputDecoration(
+      border: outlineInputBorder,
       hintText: widget.hintText ?? 'Email',
       suffixIcon: const Icon(FontAwesomeIcons.envelope),
       fillColor: isFocused

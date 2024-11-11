@@ -48,6 +48,7 @@ class InputBase extends StatelessWidget {
   final List<String>? genderItems;
   final String? hintText;
   final InputDecoration? inputDecoration;
+  final OutlineInputBorder? outlineInputBorder;
   const InputBase({
     super.key,
     required this.textFFType,
@@ -56,6 +57,7 @@ class InputBase extends StatelessWidget {
     this.validation,
     this.onCompleted,
     this.onChanged,
+    this.outlineInputBorder,
     this.genderItems,
     this.hintText,
     this.inputDecoration,
@@ -74,6 +76,7 @@ class InputBase extends StatelessWidget {
         break;
       case InputEnum.email:
         returnWidget = _InputEmail(
+          outlineInputBorder: outlineInputBorder,
           textEditingController: textEditingController,
           hintText: hintText,
           inputDecoration: inputDecoration,
@@ -96,6 +99,7 @@ class InputBase extends StatelessWidget {
         break;
       case InputEnum.basic:
         returnWidget = _InputBasic(
+          outlineInputBorder: outlineInputBorder,
           textEditingController: textEditingController,
           hintText: hintText,
           validation: validation,

@@ -10,23 +10,26 @@ class _InputBasic extends StatefulWidget {
   final int? maxLines;
   final String? Function(String? val)? validation;
   final TextInputType? keyboardType;
+  final Icon? suffixIcon;
   TextEditingController? textEditingController;
   final TextCapitalization? textCapitalization;
   final InputDecoration? inputDecoration;
+  final OutlineInputBorder? outlineInputBorder;
 
-  _InputBasic({
-    super.key,
-    this.textCapitalization,
-    this.maxTextLength,
-    this.textInputAction,
-    this.inputFormatters,
-    this.validation,
-    this.hintText,
-    this.maxLines,
-    this.keyboardType,
-    this.textEditingController,
-    this.inputDecoration,
-  });
+  _InputBasic(
+      {super.key,
+      this.textCapitalization,
+      this.maxTextLength,
+      this.textInputAction,
+      this.inputFormatters,
+      this.validation,
+      this.hintText,
+      this.suffixIcon,
+      this.maxLines,
+      this.keyboardType,
+      this.textEditingController,
+      this.inputDecoration,
+      this.outlineInputBorder});
 
   @override
   State<_InputBasic> createState() => _InputBasicState();
@@ -38,7 +41,6 @@ class _InputBasicState extends State<_InputBasic> {
   bool _isFocused = false;
   bool isValidateFinish = false;
   bool isSecure = true;
-
   int? maxLines;
   _InputBasicState({this.maxLines});
   @override
@@ -94,19 +96,26 @@ class _InputBasicState extends State<_InputBasic> {
           controller: widget.textEditingController,
           textInputAction: widget.textInputAction ?? TextInputAction.next,
           validator: widget.validation,
-          decoration: widget.inputDecoration ?? _customInputDecoration(),
+          decoration: widget.inputDecoration ??
+              _customInputDecoration(widget.outlineInputBorder),
           focusNode: _textFieldFocus,
           maxLines: maxLines ?? 1,
           minLines: 1,
+          style: Theme.of(context).textTheme.bodyLarge,
         ),
       ],
     );
   }
 
-  InputDecoration _customInputDecoration() {
+  InputDecoration _customInputDecoration(
+      OutlineInputBorder? outlineInputBorder) {
+    print(outlineInputBorder == null);
     return InputDecoration(
+      enabledBorder: outlineInputBorder,
+      focusedBorder: outlineInputBorder,
+      border: outlineInputBorder,
       hintText: widget.hintText,
-      suffixIcon: const Icon(FontAwesomeIcons.accusoft),
+      suffixIcon: widget.suffixIcon,
       fillColor: _isFocused
           ? Theme.of(context).inputDecorationTheme.focusColor
           : Theme.of(context).inputDecorationTheme.fillColor,

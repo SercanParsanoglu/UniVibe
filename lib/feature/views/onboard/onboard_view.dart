@@ -4,10 +4,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
 import 'package:uni_social/core/constants/assets.dart';
 import 'package:uni_social/core/widgets/custom_elevated_button.dart';
-import 'package:uni_social/feature/onboard/onboard_model.dart';
+import 'package:uni_social/feature/views/onboard/onboard_model.dart';
 import 'package:uni_social/feature/router/app_router.dart';
 import 'package:uni_social/feature/router/app_router.gr.dart';
-import '../../core/constants/colors.dart';
+import '../../../core/constants/colors.dart';
 
 @RoutePage()
 class OnboardView extends StatefulWidget {
@@ -72,7 +72,11 @@ class _OnboardViewState extends State<OnboardView> {
                   style: const TextStyle(
                       color: WidgetColors.elevatedButtonTextColor),
                 ),
-                onPressed: () {
+                onPressed: () async {
+                  // await locator.get<CacheUserProvider>().writeHive(
+                  //     UserModel(mail: "qasd@asd.asd", name: "Sercan"));
+                  // // print(locator.get<CacheUserProvider>().userDetailData?.name ??
+                  // //     "boş");
                   if (_currentPageValue != 2) {
                     _currentPageValue += 1;
                     _pageController.animateToPage(_currentPageValue,
@@ -123,7 +127,6 @@ class OnboardFirstView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    CustomAssets().test;
     return OnBoardContainer(
       onBoardModel: OnBoardModel(
           description:

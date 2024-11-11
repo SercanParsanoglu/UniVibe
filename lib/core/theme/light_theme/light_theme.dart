@@ -139,11 +139,11 @@ final ThemeData lightTheme = _baseLightTheme.copyWith(
 
   inputDecorationTheme: InputDecorationTheme(
     suffixIconColor: WidgetColors.inputDecorationSuffixIconColorLight,
-    errorStyle: const TextStyle(
-      height: 0,
-      fontSize: 0,
-    ),
-    hintStyle: _baseLightTheme.textTheme.titleMedium!
+    // errorStyle: const TextStyle(
+    //   height: 0,
+    //   fontSize: 0,
+    // ),
+    hintStyle: _baseLightTheme.textTheme.labelLarge!
         .copyWith(color: WidgetColors.inputDecorationHintTextColorLight),
     focusColor: WidgetColors.inputDecorationFocusColorLight,
     contentPadding:

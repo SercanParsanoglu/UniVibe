@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:uni_social/feature/router/app_router.gr.dart';
+import 'package:uni_social/feature/views/authentication/sign_up/sign_up_user_detail_view.dart';
 
 @AutoRouterConfig(replaceInRouteName: 'View,Route')
 class AppRouter extends RootStackRouter {
@@ -14,7 +15,9 @@ class AppRouter extends RootStackRouter {
           page: AuthRoute.page,
         ),
         AutoRoute(page: SignInRoute.page),
-        AutoRoute(page: SignUpRoute.page)
+        AutoRoute(page: SignUpRoute.page),
+        AutoRoute(page: UniRoute.page),
+        AutoRoute(page: SignUpUserDetailRoute.page)
       ];
 }
 
