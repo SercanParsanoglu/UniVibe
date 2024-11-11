@@ -67,7 +67,7 @@ class WidgetColors {
   static const Color appBarColorLight = MyColors.teal3;
   static const Color appBarActionsColorLight = MyColors.midnightBlue;
   static const Color inputDecorationSuffixIconColorLight = MyColors.warmGrey1;
-  static const Color inputDecorationHintTextColorLight = Colors.black;
+  static const Color inputDecorationHintTextColorLight = MyColors.warmGrey1;
   static const Color inputDecorationFocusColorLight = MyColors.warmGrey2;
   static const Color iconColorLight = MyColors.warmGrey1;
   static const Color bottomAppBarBackgroundColorLight = MyColors.warmGrey1;

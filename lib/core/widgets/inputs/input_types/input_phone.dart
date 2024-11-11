@@ -54,6 +54,7 @@ class __InputPhoneState extends State<_InputPhone> {
               errorText: 'Geçersiz telefon numarası'),
         ],
       ),
+      autovalidateMode: AutovalidateMode.always,
       countrySelectorNavigator:
           const CountrySelectorNavigator.draggableBottomSheet(
         favorites: [IsoCode.TR],
