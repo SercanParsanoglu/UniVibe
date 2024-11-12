@@ -6,10 +6,10 @@ import 'package:uni_social/core/extension/context_extension.dart';
 import 'package:uni_social/core/extension/theme_extension.dart';
 import 'package:uni_social/core/widgets/space/space.dart';
 import 'package:uni_social/feature/router/app_router.gr.dart';
-import '../../../../core/widgets/custom_elevated_button.dart';
-import '../../../../core/widgets/inputs/input_base.dart';
-import '../../../constants/assets.dart';
-import '../../../router/app_router.dart';
+import 'package:uni_social/core/widgets/custom_elevated_button.dart';
+import 'package:uni_social/core/widgets/inputs/input_base.dart';
+import 'package:uni_social/feature/constants/assets.dart';
+import 'package:uni_social/feature/router/app_router.dart';
 
 @RoutePage()
 class SignUpView extends StatefulWidget {
@@ -36,10 +36,10 @@ class _SignUpViewState extends State<SignUpView> {
 
   @override
   Widget build(BuildContext context) {
-    String selectedDomain = "@karabuk.edu.tr"; // Varsayılan domain
+    const selectedDomain = '@karabuk.edu.tr'; // Varsayılan domain
 
     // Seçilebilir domain listesi
-    final List<String> domains = [
+    final domains = <String>[
       // "@boun.edu.tr", // Boğaziçi Üniversitesi
       // "@itu.edu.tr", // İstanbul Teknik Üniversitesi
       // "@metu.edu.tr", // Orta Doğu Teknik Üniversitesi (ODTÜ)
@@ -53,76 +53,82 @@ class _SignUpViewState extends State<SignUpView> {
       // "@bilkent.edu.tr", // Bilkent Üniversitesi
       // "@sabanciuniv.edu", // Sabancı Üniversitesi
       // "@ku.edu.tr", // Koç Üniversitesi
-      "@deu.edu.tr", // Dokuz Eylül Üniversitesi
-      "@karabuk.edu.tr", // Karabük Üniversitesi
-      "@yildiz.edu.tr", // Yıldız Teknik Üniversitesi
+      '@deu.edu.tr', // Dokuz Eylül Üniversitesi
+      '@karabuk.edu.tr', // Karabük Üniversitesi
+      '@yildiz.edu.tr', // Yıldız Teknik Üniversitesi
       // "@selcuk.edu.tr", // Selçuk Üniversitesi
       // "@cankaya.edu.tr", // Çankaya Üniversitesi
     ];
 
     return Scaffold(
-        appBar: AppBar(),
-        body: SingleChildScrollView(
-          child: ConstrainedBox(
-            constraints: BoxConstraints.tightFor(
-                height: Theme.of(context).cleanHeightWithAppbar),
-            child: Stack(
-              children: [
-                const _Background(),
-                Padding(
-                  padding: context.paddingLow,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        height: 500.h,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(20.r),
-                          ),
-                          boxShadow: [
-                            BoxShadow(
-                              color:
-                                  Colors.black.withOpacity(0.9), // Gölge rengi
-                              spreadRadius: 10, // Gölgenin yayılma miktarı
-                              blurRadius: 50, // Gölgenin bulanıklık seviyesi
-                              offset: const Offset(
-                                  0, 4), // Gölgenin yerleşimi (x, y)
-                            ),
-                          ],
+      appBar: AppBar(),
+      body: SingleChildScrollView(
+        child: ConstrainedBox(
+          constraints: BoxConstraints.tightFor(
+            height: Theme.of(context).cleanHeightWithAppbar,
+          ),
+          child: Stack(
+            children: [
+              const _Background(),
+              Padding(
+                padding: context.paddingLow,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      height: 500.h,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(20.r),
                         ),
-                        child: Padding(
-                          padding: context.paddingLow,
-                          child: Column(
-                            children: [
-                              Space(
-                                  spaceValue: SpaceValue.xl50,
-                                  spaceType: SpaceType.vertical),
-                              Row(
-                                children: [
-                                  Flexible(
-                                    child: InputBase(
-                                        outlineInputBorder:
-                                            const OutlineInputBorder(
-                                          borderSide: BorderSide.none,
-                                          borderRadius: BorderRadius.only(
-                                              bottomLeft: Radius.circular(10.0),
-                                              topLeft: Radius.circular(10)),
-                                        ),
-                                        hintText: "Mail adresi",
-                                        textFFType: InputType.basic,
-                                        textEditingController: mailController),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.9), // Gölge rengi
+                            spreadRadius: 10, // Gölgenin yayılma miktarı
+                            blurRadius: 50, // Gölgenin bulanıklık seviyesi
+                            offset: const Offset(
+                              0,
+                              4,
+                            ), // Gölgenin yerleşimi (x, y)
+                          ),
+                        ],
+                      ),
+                      child: Padding(
+                        padding: context.paddingLow,
+                        child: Column(
+                          children: [
+                            Space(
+                              spaceValue: SpaceValue.xl50,
+                              spaceType: SpaceType.vertical,
+                            ),
+                            Row(
+                              children: [
+                                Flexible(
+                                  child: InputBase(
+                                    outlineInputBorder:
+                                        const OutlineInputBorder(
+                                      borderSide: BorderSide.none,
+                                      borderRadius: BorderRadius.only(
+                                        bottomLeft: Radius.circular(10),
+                                        topLeft: Radius.circular(10),
+                                      ),
+                                    ),
+                                    hintText: 'Mail adresi',
+                                    textFFType: InputType.basic,
+                                    textEditingController: mailController,
                                   ),
-                                  Flexible(
-                                      child: Container(
+                                ),
+                                Flexible(
+                                  child: Container(
                                     decoration: BoxDecoration(
                                       color: Theme.of(context)
                                           .inputDecorationTheme
                                           .fillColor,
                                       borderRadius: const BorderRadius.only(
-                                          topRight: Radius.circular(10.0),
-                                          bottomRight: Radius.circular(10.0)),
+                                        topRight: Radius.circular(10),
+                                        bottomRight: Radius.circular(10),
+                                      ),
                                     ),
                                     child: DropdownSearch(
                                       selectedItem: selectedDomain,
@@ -130,7 +136,7 @@ class _SignUpViewState extends State<SignUpView> {
                                       items: (filter, loadProps) => domains,
                                       dropdownBuilder:
                                           (context, selectedItem) => Text(
-                                        selectedItem,
+                                        '$selectedItem',
                                         style: Theme.of(context)
                                             .textTheme
                                             .bodyLarge,
@@ -138,7 +144,8 @@ class _SignUpViewState extends State<SignUpView> {
                                       decoratorProps: DropDownDecoratorProps(
                                         decoration: InputDecoration(
                                           contentPadding: EdgeInsets.symmetric(
-                                              vertical: 20.h),
+                                            vertical: 20.h,
+                                          ),
                                           border: const OutlineInputBorder(),
                                         ),
                                       ),
@@ -146,46 +153,54 @@ class _SignUpViewState extends State<SignUpView> {
                                         fit: FlexFit.loose,
                                       ),
                                     ),
-                                  )),
-                                ],
-                              ),
-                              Space(
-                                  spaceValue: SpaceValue.xs10,
-                                  spaceType: SpaceType.vertical),
-                              InputBase(
-                                  textFFType: InputEnum.phone,
-                                  textEditingController: phoneController),
-                              Space(
-                                  spaceValue: SpaceValue.xs10,
-                                  spaceType: SpaceType.vertical),
-                              InputBase(
-                                  textFFType: InputEnum.username,
-                                  textEditingController: usernameController),
-                              Space(
-                                  spaceValue: SpaceValue.xs10,
-                                  spaceType: SpaceType.vertical),
-                              CustomElevatedButton(
-                                child: const Text("Kayıt ol"),
-                                onPressed: () {
-                                  router.push(const SignUpUserDetailRoute());
-                                },
-                              ),
-                              TextButton(
-                                  onPressed: () {
-                                    router.push(const UniRoute());
-                                  },
-                                  child: const Text("Üniversitemde istiyorum."))
-                            ],
-                          ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Space(
+                              spaceValue: SpaceValue.xs10,
+                              spaceType: SpaceType.vertical,
+                            ),
+                            InputBase(
+                              textFFType: InputEnum.phone,
+                              textEditingController: phoneController,
+                            ),
+                            Space(
+                              spaceValue: SpaceValue.xs10,
+                              spaceType: SpaceType.vertical,
+                            ),
+                            InputBase(
+                              textFFType: InputEnum.username,
+                              textEditingController: usernameController,
+                            ),
+                            Space(
+                              spaceValue: SpaceValue.xs10,
+                              spaceType: SpaceType.vertical,
+                            ),
+                            CustomElevatedButton(
+                              child: const Text('Kayıt ol'),
+                              onPressed: () {
+                                router.push(const MailConfirmationRoute());
+                              },
+                            ),
+                            TextButton(
+                              onPressed: () {
+                                router.push(const UniRoute());
+                              },
+                              child: const Text('Üniversitemde istiyorum.'),
+                            ),
+                          ],
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
-        ));
+        ),
+      ),
+    );
   }
 }
 

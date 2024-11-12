@@ -21,7 +21,10 @@ class CodegenLoader extends AssetLoader{
   "onboardView2Headline": "",
   "onboardView2Desc": "",
   "onboardView3Headline": "",
-  "onboardView3Desc": ""
+  "onboardView3Desc": "",
+  "datePickerInputFocusHintText": "01/01/2023",
+  "datePickerInputHintText": "Doğum tarihi",
+  "datePickerYouMust18": "18 yaşından büyük olmalısın"
 };
 static const Map<String,dynamic> tr = {
   "uniDating": "UniDating",
@@ -30,7 +33,10 @@ static const Map<String,dynamic> tr = {
   "onboardView2Headline": "",
   "onboardView2Desc": "",
   "onboardView3Headline": "",
-  "onboardView3Desc": ""
+  "onboardView3Desc": "",
+  "datePickerInputFocusHintText": "01/01/2023",
+  "datePickerInputHintText": "Doğum tarihi",
+  "datePickerYouMust18": "18 yaşından büyük olmalısın"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "tr": tr};
 }

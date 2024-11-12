@@ -2,7 +2,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:uni_social/core/constants/colors.dart';
 
 // ignore: must_be_immutable
 class ViewModalBottomSheet extends StatefulWidget {
@@ -46,8 +45,7 @@ class _ViewModalBottomSheetState extends State<ViewModalBottomSheet> {
               EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
           child: Container(
             decoration: BoxDecoration(
-                color: MyColors.mustardYellow,
-                // color: Theme.of(context).bottomSheetBackgroundColor,
+                color: Colors.black,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(25.0.r),
                   topRight: Radius.circular(25.0.r),
@@ -61,7 +59,7 @@ class _ViewModalBottomSheetState extends State<ViewModalBottomSheet> {
                 ),
                 Container(
                   decoration: const BoxDecoration(
-                      // color: Theme.of(context).bottomSheetTopWidgetColor,
+                      color: Colors.red,
                       borderRadius: BorderRadius.all(Radius.circular(3))),
                   alignment: Alignment.center,
                   width: 63.w,
@@ -76,7 +74,7 @@ class _ViewModalBottomSheetState extends State<ViewModalBottomSheet> {
                         topLeft: Radius.circular(10.0),
                         topRight: Radius.circular(10.0),
                       ),
-                      // color: Theme.of(context).bottomSheetBackgroundColor,
+                      color: Colors.yellow,
                     ),
                     child: widget.childPage),
               ],

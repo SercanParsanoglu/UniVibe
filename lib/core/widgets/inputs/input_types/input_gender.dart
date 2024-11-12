@@ -34,7 +34,7 @@ class __InputGenderState extends State<_InputGender> {
           child: Padding(
             padding: _customPadding(index),
             child: Container(
-              width: 108.w,
+              constraints: BoxConstraints(minWidth: 75.w),
               //height: 40.h,
               decoration: BoxDecoration(
                 color: Theme.of(context).scaffoldBackgroundColor,

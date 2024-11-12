@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:uni_social/feature/model/user_model.dart';
 
-import '../cache/hive/hive_cache.dart';
+import 'package:uni_social/feature/cache/hive/hive_cache.dart';
 
 class CacheUserProvider extends ChangeNotifier {
-  final HiveCache<UserModel> _hiveManager = HiveCache();
-  UserModel? _userDetailData;
-
   CacheUserProvider() {
     startHive();
   }
+  final HiveCache<UserModel> _hiveManager = HiveCache();
+  UserModel? _userDetailData;
 
   UserModel? get userDetailData => _userDetailData;
   Future<void> startHive() async {
     await _hiveManager.init();
     if (_hiveManager.getValues()!.isNotEmpty) {
-      _userDetailData = _hiveManager.getValues()![0];
+      _userDetailData = _hiveManager.getValues()![0] as UserModel;
     }
   }
 
@@ -25,10 +24,10 @@ class CacheUserProvider extends ChangeNotifier {
   }
 
   Future<void> writeHive(UserModel? item) async {
-    print("writeee");
+    print('writeee');
     await _hiveManager.putItem(item);
     await refreshHive();
-    print("writeee222");
+    print('writeee222');
   }
 
   Future<void> refreshHive() async {

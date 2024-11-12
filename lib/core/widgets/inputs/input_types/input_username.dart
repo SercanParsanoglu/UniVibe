@@ -18,6 +18,9 @@ class _InputUsername extends StatefulWidget {
 }
 
 class __InputUsernameState extends State<_InputUsername> {
+  final LowercaseTextInputFormatter _lowercaseFormatter =
+      LowercaseTextInputFormatter();
+
   final FocusNode _textFieldFocus = FocusNode();
   bool isFocused = false;
   TextEditingController? textEditingController;
@@ -45,6 +48,20 @@ class __InputUsernameState extends State<_InputUsername> {
     return FormBuilderTextField(
       name: 'username',
       onTapOutside: (event) => _textFieldFocus.unfocus(),
+      inputFormatters: [
+        FilteringTextInputFormatter.deny(
+          RegExp(' '),
+        ),
+        LengthLimitingTextInputFormatter(30),
+        _lowercaseFormatter,
+        _UsernameTextFFFormatter(),
+        FilteringTextInputFormatter.deny(RegExp(r'[^\w@\.]')),
+        FilteringTextInputFormatter.deny(RegExp(r'[ğüşıöçĞÜŞİÖÇ@]')),
+        FilteringTextInputFormatter.deny(
+          RegExp(
+              r'(\u00a9|\u00ae|[\u2000-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])'),
+        ),
+      ],
       keyboardType: TextInputType.name,
       autovalidateMode: AutovalidateMode.onUserInteraction,
       controller: textEditingController,
@@ -53,9 +70,11 @@ class __InputUsernameState extends State<_InputUsername> {
       validator: FormBuilderValidators.compose(
         [
           FormBuilderValidators.required(
-              errorText: "Username alanı zorunludur."),
+              errorText: "Kullanıcı adı alanı zorunludur."),
           FormBuilderValidators.username(
-              allowDots: true, errorText: "Geçersiz kullanıcı adı."),
+              allowSpace: true,
+              allowDots: true,
+              errorText: "Geçersiz kullanıcı adı."),
         ],
       ),
     );
@@ -72,5 +91,29 @@ class __InputUsernameState extends State<_InputUsername> {
       enabled: true,
       isCollapsed: true,
     );
+  }
+}
+
+//! Girilen metni otomatik olarak küçük harfe çevirir.
+
+class LowercaseTextInputFormatter extends TextInputFormatter {
+  @override
+  TextEditingValue formatEditUpdate(
+      TextEditingValue oldValue, TextEditingValue newValue) {
+    return newValue.copyWith(text: newValue.text.toLowerCase());
+  }
+}
+
+class _UsernameTextFFFormatter extends TextInputFormatter {
+  @override
+  TextEditingValue formatEditUpdate(
+      TextEditingValue oldValue, TextEditingValue newValue) {
+    if (newValue.text.contains('.') &&
+        newValue.text.substring(newValue.text.indexOf('.') + 1).contains('.')) {
+      return oldValue;
+    } else if (newValue.text.contains('____')) {
+      return oldValue;
+    }
+    return newValue;
   }
 }
