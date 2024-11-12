@@ -8,6 +8,7 @@ import 'package:uni_social/core/widgets/space/space.dart';
 import 'package:uni_social/feature/router/app_router.gr.dart';
 import '../../../../core/widgets/custom_elevated_button.dart';
 import '../../../../core/widgets/inputs/input_base.dart';
+import '../../../../core/widgets/inputs/input_date.dart';
 import '../../../constants/assets.dart';
 import '../../../router/app_router.dart';
 
@@ -125,18 +126,22 @@ class _SignUpUserDetailViewState extends State<SignUpUserDetailView> {
                               Space(
                                   spaceValue: SpaceValue.xs10,
                                   spaceType: SpaceType.vertical),
-                              InputBase(
-                                textFFType: InputEnum.basic,
+                              InputDate(
                                 textEditingController: phoneController,
-                                hintText: "Cinsiyet",
                               ),
+                              // InputBase(
+                              //   textFFType: InputEnum.basic,
+                              //   textEditingController: phoneController,
+                              //   hintText: "Doğum tarihi",
+                              // ),
                               Space(
                                   spaceValue: SpaceValue.xs10,
                                   spaceType: SpaceType.vertical),
                               InputBase(
-                                textFFType: InputEnum.basic,
+                                textFFType: InputEnum.gender,
+                                genderItems: const ["Kadın", "Erkek", "Özel"],
                                 textEditingController: phoneController,
-                                hintText: "Doğum tarihi",
+                                hintText: "Cinsiyet",
                               ),
                               Space(
                                   spaceValue: SpaceValue.s20,
@@ -148,11 +153,6 @@ class _SignUpUserDetailViewState extends State<SignUpUserDetailView> {
                               Space(
                                   spaceValue: SpaceValue.s20,
                                   spaceType: SpaceType.vertical),
-                              // TextButton(
-                              //     onPressed: () {
-                              //       router.push(const UniRoute());
-                              //     },
-                              //     child: const Text("Üniversitemde istiyorum."))
                             ],
                           ),
                         ),

@@ -2,7 +2,7 @@ import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:uni_social/feature/model/user_model.dart';
 
-import 'hive_type_ids.dart';
+import 'package:uni_social/feature/cache/hive/hive_type_ids.dart';
 
 part 'main_cache.dart';
 
@@ -19,13 +19,13 @@ class HiveCache<T> extends ICacheManager<T> {
 
   @override
   T? getItem({String? key}) {
-    var keyy = key ?? super.key;
-    return _box?.get(keyy);
+    final keyy = key ?? super.key;
+    return _box?.get(keyy) as T;
   }
 
   @override
   Future<void> putItem(dynamic item, {String? key}) async {
-    var keyy = key ?? super.key;
+    final keyy = key ?? super.key;
     print('Hive putItem keyy: $keyy');
     await _box?.put(keyy, item);
   }
@@ -52,9 +52,9 @@ class HiveCache<T> extends ICacheManager<T> {
 
   @override
   void registerAdapters() {
-    print("register adapter");
+    print('register adapter');
     if (!Hive.isAdapterRegistered(HiveConstants.userHiveId)) {
-      Hive.registerAdapter((UserModelAdapter()));
+      Hive.registerAdapter(UserModelAdapter());
       // Hive.registerAdapter(GetAssetsModelResAdapter());
       // Hive.registerAdapter(ProfileImageAdapter());
       // Hive.registerAdapter(IconsAdapter());

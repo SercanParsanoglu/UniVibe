@@ -8,5 +8,8 @@ abstract class  LocaleKeys {
   static const onboardView2Desc = 'onboardView2Desc';
   static const onboardView3Headline = 'onboardView3Headline';
   static const onboardView3Desc = 'onboardView3Desc';
+  static const datePickerInputFocusHintText = 'datePickerInputFocusHintText';
+  static const datePickerInputHintText = 'datePickerInputHintText';
+  static const datePickerYouMust18 = 'datePickerYouMust18';
 
 }

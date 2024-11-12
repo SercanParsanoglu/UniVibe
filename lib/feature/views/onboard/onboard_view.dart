@@ -201,7 +201,7 @@ class OnBoardSecondView extends StatelessWidget {
     return OnBoardContainer(
       onBoardModel: OnBoardModel(
           description:
-              "Profilinde ilgi alanlarınıalanlarınıalanlarınıalanlarınıalanlarınıalanlarınıalanlarınıalanlarınıalanlarınıalanlarınıalanlarınıalanlarınıalanlarınıalanlarınıalanlarını belirt, benzer hobileri paylaşan öğrencilerle kolayca eşleş. Kitap kulüplerinden spor etkinliklerine, her şey burada!",
+              "İlgini çeken etkinliklere katıl veya kendi etkinliğini oluşturarak ortak zevklere sahip insanlarla sosyalleş!",
           image: "assets/images/onboard_image_2.json",
           headline: "İlgi Alanlarına Göre Eşleş!"),
     );
