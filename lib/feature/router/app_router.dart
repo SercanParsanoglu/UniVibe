@@ -6,10 +6,14 @@ import 'package:uni_social/feature/router/app_router.gr.dart';
 class AppRouter extends RootStackRouter {
   @override
   RouteType get defaultRouteType => const RouteType.custom(
-      barrierColor: Colors.amber, durationInMilliseconds: 100);
+        barrierColor: Colors.amber,
+        durationInMilliseconds: 100,
+      );
   @override
   List<AutoRoute> get routes => [
-        AutoRoute(page: OnboardRoute.page, initial: true),
+        AutoRoute(
+          page: OnboardRoute.page,
+        ),
         AutoRoute(
           page: AuthRoute.page,
         ),
@@ -17,7 +21,7 @@ class AppRouter extends RootStackRouter {
         AutoRoute(page: SignUpRoute.page),
         AutoRoute(page: UniRoute.page),
         AutoRoute(page: SignUpUserDetailRoute.page),
-        AutoRoute(page: MailConfirmationRoute.page)
+        AutoRoute(page: MailConfirmationRoute.page, initial: true),
       ];
 }
 

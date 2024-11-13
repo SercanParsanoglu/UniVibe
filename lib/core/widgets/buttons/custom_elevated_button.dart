@@ -21,19 +21,19 @@ mixin CustomElevatedButtonType {
 
 // ignore: must_be_immutable
 class CustomElevatedButton extends StatefulWidget {
-  final Widget btnText;
+  final Widget widget;
   bool alignCenter;
   final CustomElevatedButtonEnum customElevatedButtonType;
   final VoidCallback? onPressed;
   final double? padding;
 
   CustomElevatedButton({
+    required this.widget,
+    required this.customElevatedButtonType,
     super.key,
     this.padding,
     this.onPressed,
     this.alignCenter = true,
-    required this.btnText,
-    required this.customElevatedButtonType,
   });
 
   @override
@@ -54,14 +54,14 @@ class _CustomElevatedButtonState extends State<CustomElevatedButton> {
     return Container(
       alignment: widget.alignCenter ? Alignment.center : Alignment.centerRight,
       margin: widget.alignCenter
-          ? const EdgeInsets.all(0)
+          ? EdgeInsets.zero
           : EdgeInsets.symmetric(horizontal: 10.0.w),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           foregroundColor: widget.customElevatedButtonType ==
                   CustomElevatedButtonEnum.whiteBtn
-              ? MyColors.midnightBlue
-              : MyColors.midnightBlue,
+              ? MyColors.ivory
+              : WidgetColors.elevatedButtonMainColorLight,
           backgroundColor: btnColor,
           fixedSize: widget.customElevatedButtonType ==
                   CustomElevatedButtonEnum.smallBtn
@@ -73,7 +73,7 @@ class _CustomElevatedButtonState extends State<CustomElevatedButton> {
           _updateButtonColor();
         },
         child: Center(
-          child: widget.btnText,
+          child: widget.widget,
         ),
       ),
     );
@@ -83,19 +83,14 @@ class _CustomElevatedButtonState extends State<CustomElevatedButton> {
     switch (widget.customElevatedButtonType) {
       case CustomElevatedButtonEnum.normalBtn:
         btnColor = WidgetColors.elevatedButtonMainColorLight;
-        break;
       case CustomElevatedButtonEnum.smallBtn:
         widget.alignCenter = false;
 
-        break;
       case CustomElevatedButtonEnum.deletedBtn:
-        btnColor = MyColors.red1;
+        btnColor = WidgetColors.deleteColor;
 
-        break;
       case CustomElevatedButtonEnum.whiteBtn:
-        btnColor = MyColors.warmGrey4;
-
-        break;
+        btnColor = MyColors.charcoal;
     }
   }
 }

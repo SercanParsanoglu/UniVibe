@@ -16,6 +16,8 @@ class CodegenLoader extends AssetLoader{
 
   static const Map<String,dynamic> en = {
   "uniDating": "UniDating",
+  "authViewElevatedButton": "Kayıt ol",
+  "authViewTextButton": "Zaten hesabım var",
   "onboardView1Headline": "Yeni arkadaşlıklar seni bekliyor",
   "onboardView1Desc": "",
   "onboardView2Headline": "",
@@ -24,10 +26,16 @@ class CodegenLoader extends AssetLoader{
   "onboardView3Desc": "",
   "datePickerInputFocusHintText": "01/01/2023",
   "datePickerInputHintText": "Doğum tarihi",
-  "datePickerYouMust18": "18 yaşından büyük olmalısın"
+  "datePickerYouMust18": "18 yaşından büyük olmalısın",
+  "mailConfirmationViewTextSendMail": "Sana bir mail gönderdik",
+  "mailConfirmationViewTextControlMail": "2014010811004@karabuk.edu.tr mail adresini kontrol edip onay kodunu girebilirsin",
+  "mailConfirmationViewSpanButtonWhite": "Mail adresimi yanlış girdim",
+  "mailConfirmationViewSpanButtonBlue": "Düzenle"
 };
 static const Map<String,dynamic> tr = {
   "uniDating": "UniDating",
+  "authViewElevatedButton": "Kayıt ol",
+  "authViewTextButton": "Zaten hesabım var",
   "onboardView1Headline": "Yeni arkadaşlıklar seni bekliyor",
   "onboardView1Desc": "",
   "onboardView2Headline": "",
@@ -36,7 +44,11 @@ static const Map<String,dynamic> tr = {
   "onboardView3Desc": "",
   "datePickerInputFocusHintText": "01/01/2023",
   "datePickerInputHintText": "Doğum tarihi",
-  "datePickerYouMust18": "18 yaşından büyük olmalısın"
+  "datePickerYouMust18": "18 yaşından büyük olmalısın",
+  "mailConfirmationViewTextSendMail": "Sana bir mail gönderdik",
+  "mailConfirmationViewTextControlMail": "2014010811004@karabuk.edu.tr mail adresini kontrol edip onay kodunu girebilirsin",
+  "mailConfirmationViewSpanButtonWhite": "Mail adresimi yanlış girdim",
+  "mailConfirmationViewSpanButtonBlue": "Düzenle"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "tr": tr};
 }

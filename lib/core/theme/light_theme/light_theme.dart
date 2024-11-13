@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../constants/colors.dart';
+import 'package:uni_social/core/constants/colors.dart';
 
 String? FONT_FAMILY = 'Roboto';
 FontWeight _bold = FontWeight.w700;
@@ -37,66 +37,89 @@ final ThemeData _baseLightTheme = ThemeData(
   textTheme: TextTheme(
     //DISPLAYS
     displayLarge: TextStyle(
-        fontSize: 57.sp, fontWeight: _bold, color: WidgetColors.textColorLight),
+      fontSize: 57.sp,
+      fontWeight: _bold,
+      color: WidgetColors.textColorLight,
+    ),
     displayMedium: TextStyle(
-        fontSize: 45.sp,
-        fontWeight: _medium,
-        color: WidgetColors.textColorLight),
+      fontSize: 45.sp,
+      fontWeight: _medium,
+      color: WidgetColors.textColorLight,
+    ),
     displaySmall: TextStyle(
-        fontSize: 36.sp,
-        fontWeight: _regular,
-        color: WidgetColors.textColorLight),
+      fontSize: 36.sp,
+      fontWeight: _regular,
+      color: WidgetColors.textColorLight,
+    ),
 
     //HEADLINES
     headlineLarge: TextStyle(
-        fontSize: 32.sp, fontWeight: _bold, color: WidgetColors.textColorLight),
+      fontSize: 32.sp,
+      fontWeight: _bold,
+      color: WidgetColors.textColorLight,
+    ),
     headlineMedium: TextStyle(
-        fontSize: 28.sp,
-        fontWeight: _medium,
-        color: WidgetColors.textColorLight),
+      fontSize: 28.sp,
+      fontWeight: _medium,
+      color: WidgetColors.textColorLight,
+    ),
     headlineSmall: TextStyle(
-        fontSize: 24.sp,
-        fontWeight: _regular,
-        color: WidgetColors.textColorLight),
+      fontSize: 24.sp,
+      fontWeight: _regular,
+      color: WidgetColors.textColorLight,
+    ),
 
     //TITLES
     titleLarge: TextStyle(
-        fontSize: 22.sp,
-        fontWeight: _medium,
-        color: WidgetColors.textColorLight),
+      fontSize: 22.sp,
+      fontWeight: _medium,
+      color: WidgetColors.textColorLight,
+    ),
     titleMedium: TextStyle(
-        fontSize: 16.sp, fontWeight: _bold, color: WidgetColors.textColorLight),
+      fontSize: 16.sp,
+      fontWeight: _bold,
+      color: WidgetColors.textColorLight,
+    ),
     titleSmall: TextStyle(
-        fontSize: 14.sp, fontWeight: _bold, color: WidgetColors.textColorLight),
+      fontSize: 14.sp,
+      fontWeight: _bold,
+      color: WidgetColors.textColorLight,
+    ),
 
     //LABELS
     labelLarge: TextStyle(
-        fontSize: 14.sp,
-        fontWeight: _medium,
-        color: WidgetColors.textColorLight),
+      fontSize: 14.sp,
+      fontWeight: _medium,
+      color: WidgetColors.textColorLight,
+    ),
     labelMedium: TextStyle(
-        fontSize: 12.sp,
-        fontWeight: _medium,
-        color: WidgetColors.textColorLight),
+      fontSize: 12.sp,
+      fontWeight: _medium,
+      color: WidgetColors.textColorLight,
+    ),
     labelSmall: TextStyle(
-        letterSpacing: 0,
-        fontSize: 11.sp,
-        fontWeight: _medium,
-        color: WidgetColors.textColorLight),
+      letterSpacing: 0,
+      fontSize: 11.sp,
+      fontWeight: _medium,
+      color: WidgetColors.textColorLight,
+    ),
 
     //BODYS
     bodyLarge: TextStyle(
-        fontSize: 16.sp,
-        fontWeight: _regular,
-        color: WidgetColors.textColorLight),
+      fontSize: 16.sp,
+      fontWeight: _regular,
+      color: WidgetColors.textColorLight,
+    ),
     bodyMedium: TextStyle(
-        fontSize: 14.sp,
-        fontWeight: _regular,
-        color: WidgetColors.textColorLight),
+      fontSize: 14.sp,
+      fontWeight: _regular,
+      color: WidgetColors.textColorLight,
+    ),
     bodySmall: TextStyle(
-        fontSize: 12.sp,
-        fontWeight: _regular,
-        color: WidgetColors.textColorLight),
+      fontSize: 12.sp,
+      fontWeight: _regular,
+      color: WidgetColors.textColorLight,
+    ),
   ),
 );
 
@@ -106,22 +129,25 @@ final ThemeData lightTheme = _baseLightTheme.copyWith(
   //!Elevated Button
 
   elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ElevatedButton.styleFrom(
-          padding: EdgeInsets.only(left: 20.w, right: 20.w),
-          shape: const RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(Radius.circular(10))),
-          backgroundColor: WidgetColors.elevatedButtonMainColorLight,
-          disabledBackgroundColor:
-              WidgetColors.disabledButtonBackgroundColorLight,
-          disabledForegroundColor:
-              WidgetColors.disabledButtonForegroundColorLight,
-          textStyle: _baseLightTheme.textTheme.titleMedium)),
+    style: ElevatedButton.styleFrom(
+      padding: EdgeInsets.only(left: 20.w, right: 20.w),
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(10)),
+      ),
+      backgroundColor: WidgetColors.elevatedButtonMainColorLight,
+      disabledBackgroundColor: WidgetColors.disabledButtonBackgroundColorLight,
+      disabledForegroundColor: WidgetColors.disabledButtonForegroundColorLight,
+      textStyle: _baseLightTheme.textTheme.titleMedium,
+    ),
+  ),
 
   //!Text Button
 
   textButtonTheme: TextButtonThemeData(
-      style: TextButton.styleFrom(
-          textStyle: _baseLightTheme.textTheme.titleMedium)),
+    style: TextButton.styleFrom(
+      textStyle: _baseLightTheme.textTheme.titleMedium,
+    ),
+  ),
 
   //!Appbar
 
@@ -167,11 +193,12 @@ final ThemeData lightTheme = _baseLightTheme.copyWith(
     ),
     border: const OutlineInputBorder(
       borderSide: BorderSide(width: 2),
-      borderRadius: BorderRadius.all(Radius.circular(10.0)),
+      borderRadius: BorderRadius.all(Radius.circular(10)),
     ),
     disabledBorder: const OutlineInputBorder(
-        borderRadius: BorderRadius.all(Radius.circular(10.0)),
-        borderSide: BorderSide.none),
+      borderRadius: BorderRadius.all(Radius.circular(10)),
+      borderSide: BorderSide.none,
+    ),
   ),
   iconTheme: IconThemeData(
     color: WidgetColors.iconColorLight,
@@ -189,27 +216,34 @@ final ThemeData lightTheme = _baseLightTheme.copyWith(
   //!Tabbar
 
   tabBarTheme: TabBarTheme(
-      //    indicatorSize: TabBarIndicatorSize.tab,
-      indicator:
-          const BoxDecoration(color: WidgetColors.tabBarIndicatorColorLight),
-      // const BoxDecoration(),
-      labelStyle: _baseLightTheme.textTheme.titleMedium,
-      unselectedLabelStyle: _baseLightTheme.textTheme.labelLarge,
-      labelColor: WidgetColors.tabBarLabelColorLight,
-      unselectedLabelColor: WidgetColors.tabBarLabelColorLight,
-      labelPadding: const EdgeInsets.symmetric(horizontal: 16.0)),
+    //    indicatorSize: TabBarIndicatorSize.tab,
+    indicator:
+        const BoxDecoration(color: WidgetColors.tabBarIndicatorColorLight),
+    // const BoxDecoration(),
+    labelStyle: _baseLightTheme.textTheme.titleMedium,
+    unselectedLabelStyle: _baseLightTheme.textTheme.labelLarge,
+    labelColor: WidgetColors.tabBarLabelColorLight,
+    unselectedLabelColor: WidgetColors.tabBarLabelColorLight,
+    labelPadding: const EdgeInsets.symmetric(horizontal: 16),
+  ),
 
   //!Floating Action Button
 
   floatingActionButtonTheme: FloatingActionButtonThemeData(
-      iconSize: 24.h,
-      elevation: 0,
-      sizeConstraints: BoxConstraints(
-          minHeight: 60.h, minWidth: 60.h, maxHeight: 60.h, maxWidth: 60.h),
-      shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(15.r))),
-      backgroundColor:
-          WidgetColors.primaryFloatingActionButtonBackgroundColorLight,
-      foregroundColor:
-          WidgetColors.primaryFloatingActionButtonForegroundColorLight),
+    iconSize: 24.h,
+    elevation: 0,
+    sizeConstraints: BoxConstraints(
+      minHeight: 60.h,
+      minWidth: 60.h,
+      maxHeight: 60.h,
+      maxWidth: 60.h,
+    ),
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.all(Radius.circular(15.r)),
+    ),
+    backgroundColor:
+        WidgetColors.primaryFloatingActionButtonBackgroundColorLight,
+    foregroundColor:
+        WidgetColors.primaryFloatingActionButtonForegroundColorLight,
+  ),
 );

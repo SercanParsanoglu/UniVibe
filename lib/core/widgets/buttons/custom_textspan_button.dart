@@ -1,26 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../constants/colors.dart';
-import '../../extension/theme_extension.dart';
+import 'package:uni_social/core/constants/colors.dart';
+import 'package:uni_social/core/extension/theme_extension.dart';
 
 /// The `CustomTextSpanButton` class is a custom button widget in Dart that displays two text spans, one in white and one in blue, and triggers a callback when pressed.
 
 class CustomTextSpanButton extends StatelessWidget {
+  const CustomTextSpanButton({
+    required this.whiteText,
+    required this.blueText,
+    required this.onPressed,
+    super.key,
+    this.textAlign = TextAlign.center,
+    this.alignment = Alignment.center,
+    this.padding,
+  });
   final String whiteText;
   final String blueText;
   final VoidCallback onPressed;
   final AlignmentGeometry? alignment;
   final EdgeInsetsGeometry? padding;
   final TextAlign textAlign;
-
-  const CustomTextSpanButton(
-      {super.key,
-      required this.whiteText,
-      required this.blueText,
-      required this.onPressed,
-      this.textAlign = TextAlign.center,
-      this.alignment = Alignment.center,
-      this.padding});
 
   @override
   Widget build(BuildContext context) {
@@ -38,15 +38,15 @@ class CustomTextSpanButton extends StatelessWidget {
               children: <TextSpan>[
                 TextSpan(
                   text: whiteText,
-                  style: Theme.of(context).textTheme.titleMedium!,
+                  style: Theme.of(context).textTheme.titleMedium,
                 ),
-                const TextSpan(text: " "),
+                const TextSpan(text: ' '),
                 TextSpan(
                   text: blueText,
                   style: Theme.of(context)
                       .textTheme
                       .titleMedium!
-                      .copyWith(color:MyColors.softPink),
+                      .copyWith(color: Theme.of(context).primaryColor),
                 ),
               ],
             ),
