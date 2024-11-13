@@ -1,5 +1,7 @@
 part of 'hive_cache.dart';
 
+/// The above class `ICacheManager` is an abstract class that defines methods for managing caching
+/// operations with Hive in Dart.
 abstract class ICacheManager<T> {
   final String key = T.toString();
   Box? _box;

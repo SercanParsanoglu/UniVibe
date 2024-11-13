@@ -2,6 +2,8 @@
 
 abstract class  LocaleKeys {
   static const uniDating = 'uniDating';
+  static const authViewElevatedButton = 'authViewElevatedButton';
+  static const authViewTextButton = 'authViewTextButton';
   static const onboardView1Headline = 'onboardView1Headline';
   static const onboardView1Desc = 'onboardView1Desc';
   static const onboardView2Headline = 'onboardView2Headline';
@@ -11,5 +13,9 @@ abstract class  LocaleKeys {
   static const datePickerInputFocusHintText = 'datePickerInputFocusHintText';
   static const datePickerInputHintText = 'datePickerInputHintText';
   static const datePickerYouMust18 = 'datePickerYouMust18';
+  static const mailConfirmationViewTextSendMail = 'mailConfirmationViewTextSendMail';
+  static const mailConfirmationViewTextControlMail = 'mailConfirmationViewTextControlMail';
+  static const mailConfirmationViewSpanButtonWhite = 'mailConfirmationViewSpanButtonWhite';
+  static const mailConfirmationViewSpanButtonBlue = 'mailConfirmationViewSpanButtonBlue';
 
 }

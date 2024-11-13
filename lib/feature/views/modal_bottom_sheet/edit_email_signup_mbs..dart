@@ -53,7 +53,7 @@ class EditEmailSignupMBS extends StatelessWidget {
           Padding(
               padding: EdgeInsets.only(top: 10.0.h, bottom: 20.0.h),
               child: CustomElevatedButton(
-                btnText:
+                widget:
                     // locator.get<UserAuthViewModel>().editEmailSignupState ==
                     //         UserAuthEnum.idle
                     const Text("AppLocalizations.of(context)!.updateMyEmail"),

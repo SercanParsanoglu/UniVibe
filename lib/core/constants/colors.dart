@@ -52,13 +52,16 @@ class MyColors {
 
 //Ivory
   static const Color ivory = Color(0xffFDFEFE);
+
+  static const Color seaFoam = Color(0xffE8F5F4);
 }
 
 class WidgetColors {
-  static const Color scaffoldColor = MyColors.warmGrey4;
+  static const Color scaffoldColor = MyColors.seaFoam;
   static const Color primaryColor = MyColors.teal2;
   static const Color secondColor = MyColors.purple1;
   static const Color errorColor = MyColors.red1;
+  static const Color deleteColor = MyColors.red1;
   static const Color textColorLight = Colors.black;
   static const Color cardColorLight = MyColors.teal2;
   static const Color elevatedButtonMainColorLight = MyColors.teal1;

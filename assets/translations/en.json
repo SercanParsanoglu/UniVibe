@@ -1,5 +1,7 @@
 {
     "uniDating": "UniDating",
+    "authViewElevatedButton":"Kayıt ol",
+    "authViewTextButton":"Zaten hesabım var",
     "onboardView1Headline": "Yeni arkadaşlıklar seni bekliyor",
     "onboardView1Desc": "",
     "onboardView2Headline": "",
@@ -8,5 +10,9 @@
     "onboardView3Desc": "",
     "datePickerInputFocusHintText": "01/01/2023",
     "datePickerInputHintText": "Doğum tarihi",
-    "datePickerYouMust18": "18 yaşından büyük olmalısın"
+    "datePickerYouMust18": "18 yaşından büyük olmalısın",
+    "mailConfirmationViewTextSendMail":"Sana bir mail gönderdik",
+    "mailConfirmationViewTextControlMail":"2014010811004@karabuk.edu.tr mail adresini kontrol edip onay kodunu girebilirsin",
+    "mailConfirmationViewSpanButtonWhite":"Mail adresimi yanlış girdim",
+    "mailConfirmationViewSpanButtonBlue":"Düzenle"
 }
