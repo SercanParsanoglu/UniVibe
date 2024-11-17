@@ -10,7 +10,7 @@ import 'package:uni_social/core/widgets/space/smart_padding.dart';
 import 'package:uni_social/core/widgets/space/space.dart';
 import 'package:uni_social/feature/router/app_router.dart';
 import 'package:uni_social/feature/router/app_router.gr.dart';
-import 'package:uni_social/feature/views/modal_bottom_sheet/edit_email_signup_mbs..dart';
+import 'package:uni_social/feature/views/modal_bottom_sheet/edit_email_signup_mbs.dart';
 import 'package:uni_social/translations/locale_keys.g.dart';
 
 ///The page where the verification code is entered after registration

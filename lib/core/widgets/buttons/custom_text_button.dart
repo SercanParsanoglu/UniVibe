@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import '../../constants/colors.dart';
+import 'package:uni_social/core/constants/colors.dart';
 
 /// The `CustomTextButton` class is a customizable button widget in Dart that can be used to create buttons with various properties such as text, icon, alignment, color, and style.
 
@@ -21,6 +21,7 @@ class CustomTextButton extends StatelessWidget {
   final bool? longBtn;
 
   const CustomTextButton({
+    required this.btnText,
     super.key,
     this.networkCheck = false,
     this.isSnackBar = false,
@@ -28,7 +29,6 @@ class CustomTextButton extends StatelessWidget {
     this.btnPositionLeft,
     this.btnTextLeft,
     this.onPressed,
-    required this.btnText,
     this.icon,
     this.alignCenter = true,
     this.color,
@@ -54,7 +54,9 @@ class CustomTextButton extends StatelessWidget {
             : btnPositionLeft == false
                 ? Alignment.centerRight
                 : Alignment.centerLeft,
-        decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.0.r)),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10.0.r),
+        ),
         child: alignCenter
             ? longBtn!
                 ? Padding(
@@ -84,21 +86,22 @@ class CustomTextButton extends StatelessWidget {
                                 //       )
                                 //     :
                                 const Placeholder(),
-                              Text(btnText,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: customStyle ??
-                                      Theme.of(context)
-                                          .textTheme
-                                          .titleMedium
-                                          ?.copyWith(
-                                            color: !ignoring!
-                                                ? textColor
-                                                : Theme.of(context)
-                                                            .brightness ==
-                                                        Brightness.light
-                                                    ? MyColors.mustardYellow
-                                                    : MyColors.neonGreen1,
-                                          )),
+                              Text(
+                                btnText,
+                                overflow: TextOverflow.ellipsis,
+                                style: customStyle ??
+                                    Theme.of(context)
+                                        .textTheme
+                                        .titleMedium
+                                        ?.copyWith(
+                                          color: !ignoring!
+                                              ? textColor
+                                              : Theme.of(context).brightness ==
+                                                      Brightness.light
+                                                  ? MyColors.mustardYellow
+                                                  : MyColors.neonGreen1,
+                                        ),
+                              ),
                             ],
                           ),
                         ),
@@ -115,15 +118,14 @@ class CustomTextButton extends StatelessWidget {
                         padding: EdgeInsets.symmetric(
                           horizontal: 20.0.w,
                         ),
-                        child: Text(btnText,
-                            overflow: TextOverflow.ellipsis,
-                            style: customStyle ??
-                                Theme.of(context)
-                                    .textTheme
-                                    .titleMedium
-                                    ?.copyWith(
-                                      color: textColor,
-                                    )),
+                        child: Text(
+                          btnText,
+                          overflow: TextOverflow.ellipsis,
+                          style: customStyle ??
+                              Theme.of(context).textTheme.titleMedium?.copyWith(
+                                    color: textColor,
+                                  ),
+                        ),
                       ),
                     ),
                   )
@@ -135,16 +137,21 @@ class CustomTextButton extends StatelessWidget {
                     },
                     child: Padding(
                       padding: EdgeInsets.only(
-                          left: 20.0.w, top: 10.0.h, bottom: 10.0.h),
+                        left: 20.0.w,
+                        top: 10.0.h,
+                        bottom: 10.0.h,
+                      ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Container(
                             decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10.0.r)),
+                              borderRadius: BorderRadius.circular(10.0.r),
+                            ),
                             constraints: BoxConstraints(
-                                maxWidth: ScreenUtil().screenWidth - 44.w),
+                              maxWidth: ScreenUtil().screenWidth - 44.w,
+                            ),
                             child: Text(
                               btnText,
                               overflow: TextOverflow.ellipsis,
@@ -177,7 +184,8 @@ class CustomTextButton extends StatelessWidget {
                         },
                         child: Container(
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10.0.r)),
+                            borderRadius: BorderRadius.circular(10.0.r),
+                          ),
                           height: 60.h,
                           alignment: Alignment.centerLeft,
                           child: Padding(
@@ -205,19 +213,21 @@ class CustomTextButton extends StatelessWidget {
                           margin: isSnackBar!
                               ? null
                               : EdgeInsets.only(left: 10.w, right: 10.w),
-                          height: 60.0.h,
+                          // height: 60.0.h,
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             mainAxisSize: MainAxisSize.min,
                             children: [
-                              Text(btnText,
-                                  style: customStyle ??
-                                      Theme.of(context)
-                                          .textTheme
-                                          .titleMedium
-                                          ?.copyWith(
-                                            color: textColor,
-                                          )),
+                              Text(
+                                btnText,
+                                style: customStyle ??
+                                    Theme.of(context)
+                                        .textTheme
+                                        .titleMedium
+                                        ?.copyWith(
+                                          color: textColor,
+                                        ),
+                              ),
                             ],
                           ),
                         ),
@@ -227,7 +237,7 @@ class CustomTextButton extends StatelessWidget {
   }
 
   _onPressedButton(BuildContext context) async {
-    print("qqqq");
+    print('qqqq');
     // final connectivityResult = await Connectivity().checkConnectivity();
     // if (connectivityResult == ConnectivityResult.none && networkCheck!) {
     //   // ignore: use_build_context_synchronously

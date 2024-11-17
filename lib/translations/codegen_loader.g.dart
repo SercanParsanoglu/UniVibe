@@ -30,7 +30,13 @@ class CodegenLoader extends AssetLoader{
   "mailConfirmationViewTextSendMail": "Sana bir mail gönderdik",
   "mailConfirmationViewTextControlMail": "2014010811004@karabuk.edu.tr mail adresini kontrol edip onay kodunu girebilirsin",
   "mailConfirmationViewSpanButtonWhite": "Mail adresimi yanlış girdim",
-  "mailConfirmationViewSpanButtonBlue": "Düzenle"
+  "mailConfirmationViewSpanButtonBlue": "Düzenle",
+  "signInViewWelcomeText": "Hoş geldin",
+  "signInViewElevatedButton": "Giriş yap",
+  "signInViewRememberPasswordButton": "Şifremi unuttum",
+  "signUpViewElevatedButton": "Kayıt ol",
+  "signUpViewTextButton": "Üniversitemde istiyorum",
+  "signUpViewMailHintText": "Mail adresi"
 };
 static const Map<String,dynamic> tr = {
   "uniDating": "UniDating",
@@ -48,7 +54,13 @@ static const Map<String,dynamic> tr = {
   "mailConfirmationViewTextSendMail": "Sana bir mail gönderdik",
   "mailConfirmationViewTextControlMail": "2014010811004@karabuk.edu.tr mail adresini kontrol edip onay kodunu girebilirsin",
   "mailConfirmationViewSpanButtonWhite": "Mail adresimi yanlış girdim",
-  "mailConfirmationViewSpanButtonBlue": "Düzenle"
+  "mailConfirmationViewSpanButtonBlue": "Düzenle",
+  "signInViewWelcomeText": "Hoş geldin",
+  "signInViewElevatedButton": "Giriş yap",
+  "signInViewRememberPasswordButton": "Şifremi unuttum",
+  "signUpViewElevatedButton": "Kayıt ol",
+  "signUpViewTextButton": "Üniversitemde istiyorum",
+  "signUpViewMailHintText": "Mail adresi"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "tr": tr};
 }

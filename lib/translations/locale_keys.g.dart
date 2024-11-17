@@ -17,5 +17,11 @@ abstract class  LocaleKeys {
   static const mailConfirmationViewTextControlMail = 'mailConfirmationViewTextControlMail';
   static const mailConfirmationViewSpanButtonWhite = 'mailConfirmationViewSpanButtonWhite';
   static const mailConfirmationViewSpanButtonBlue = 'mailConfirmationViewSpanButtonBlue';
+  static const signInViewWelcomeText = 'signInViewWelcomeText';
+  static const signInViewElevatedButton = 'signInViewElevatedButton';
+  static const signInViewRememberPasswordButton = 'signInViewRememberPasswordButton';
+  static const signUpViewElevatedButton = 'signUpViewElevatedButton';
+  static const signUpViewTextButton = 'signUpViewTextButton';
+  static const signUpViewMailHintText = 'signUpViewMailHintText';
 
 }

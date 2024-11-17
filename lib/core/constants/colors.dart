@@ -64,7 +64,7 @@ class WidgetColors {
   static const Color deleteColor = MyColors.red1;
   static const Color textColorLight = Colors.black;
   static const Color cardColorLight = MyColors.teal2;
-  static const Color elevatedButtonMainColorLight = MyColors.teal1;
+  static const Color elevatedButtonMainColorLight = MyColors.teal2;
   static const Color disabledButtonBackgroundColorLight = MyColors.warmGrey1;
   static const Color disabledButtonForegroundColorLight = MyColors.warmGrey1;
   static const Color appBarColorLight = MyColors.teal3;
