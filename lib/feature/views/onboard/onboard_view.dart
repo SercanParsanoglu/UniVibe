@@ -7,7 +7,8 @@ import 'package:uni_social/core/widgets/custom_elevated_button.dart';
 import 'package:uni_social/feature/views/onboard/onboard_model.dart';
 import 'package:uni_social/feature/router/app_router.dart';
 import 'package:uni_social/feature/router/app_router.gr.dart';
-import '../../../core/constants/colors.dart';
+import 'package:uni_social/core/constants/colors.dart';
+import 'package:uni_social/core/widgets/buttons/custom_elevated_button.dart';
 
 @RoutePage()
 class OnboardView extends StatefulWidget {
@@ -21,14 +22,14 @@ class _OnboardViewState extends State<OnboardView> {
   List<Widget> onboardViews = [
     const OnboardFirstView(),
     const OnBoardSecondView(),
-    const OnBoardThirdView()
+    const OnBoardThirdView(),
   ];
   PageController _pageController = PageController();
   int _currentPageValue = 0;
 
   @override
   void initState() {
-    _pageController = PageController(initialPage: 0);
+    _pageController = PageController();
     super.initState();
   }
 
@@ -37,7 +38,6 @@ class _OnboardViewState extends State<OnboardView> {
     return Scaffold(
       body: SafeArea(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Expanded(
@@ -56,10 +56,12 @@ class _OnboardViewState extends State<OnboardView> {
             Row(
               mainAxisSize: MainAxisSize.min,
               children: List.generate(
-                  onboardViews.length,
-                  (index) => _OnBoardCircle(
-                      currentPageValue: _currentPageValue,
-                      activeCircle: _currentPageValue == index)),
+                onboardViews.length,
+                (index) => _OnBoardCircle(
+                  currentPageValue: _currentPageValue,
+                  activeCircle: _currentPageValue == index,
+                ),
+              ),
             ),
             SizedBox(
               height: 50.h,
@@ -68,9 +70,10 @@ class _OnboardViewState extends State<OnboardView> {
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: CustomElevatedButton(
                 child: Text(
-                  _currentPageValue != 2 ? "Devam et" : "Hadi başlayalım",
+                  _currentPageValue != 2 ? 'Devam et' : 'Hadi başlayalım',
                   style: const TextStyle(
-                      color: WidgetColors.elevatedButtonTextColor),
+                    color: WidgetColors.elevatedButtonTextColor,
+                  ),
                 ),
                 onPressed: () async {
                   // await locator.get<CacheUserProvider>().writeHive(
@@ -79,9 +82,11 @@ class _OnboardViewState extends State<OnboardView> {
                   // //     "boş");
                   if (_currentPageValue != 2) {
                     _currentPageValue += 1;
-                    _pageController.animateToPage(_currentPageValue,
-                        duration: const Duration(milliseconds: 300),
-                        curve: Curves.linear);
+                    _pageController.animateToPage(
+                      _currentPageValue,
+                      duration: const Duration(milliseconds: 300),
+                      curve: Curves.linear,
+                    );
                   } else {
                     router.push(const AuthRoute());
                   }
@@ -90,7 +95,7 @@ class _OnboardViewState extends State<OnboardView> {
             ),
             const SizedBox(
               height: 50,
-            )
+            ),
           ],
         ),
       ),
@@ -99,17 +104,17 @@ class _OnboardViewState extends State<OnboardView> {
 }
 
 class _OnBoardCircle extends StatelessWidget {
-  bool activeCircle;
   _OnBoardCircle({
+    required int currentPageValue,
     this.activeCircle = false,
     super.key,
-    required int currentPageValue,
   });
+  bool activeCircle;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(8),
       child: Container(
         decoration: BoxDecoration(
           shape: BoxShape.circle,
@@ -129,25 +134,26 @@ class OnboardFirstView extends StatelessWidget {
   Widget build(BuildContext context) {
     return OnBoardContainer(
       onBoardModel: OnBoardModel(
-          description:
-              "Üniversitedeki öğrencilerle tanış ve ortak ilgi alanlarına sahip yeni arkadaşlar edin. Campus'teki sosyalleşme fırsatlarını kaçırma!",
-          image: "assets/images/onboard_image_1.json",
-          headline: "Yeni Arkadaşlıklar Seni Bekliyor!"),
+        description:
+            "Üniversitedeki öğrencilerle tanış ve ortak ilgi alanlarına sahip yeni arkadaşlar edin. Campus'teki sosyalleşme fırsatlarını kaçırma!",
+        image: 'assets/images/onboard_image_1.json',
+        headline: 'Yeni Arkadaşlıklar Seni Bekliyor!',
+      ),
     );
   }
 }
 
 class OnBoardContainer extends StatelessWidget {
-  OnBoardModel onBoardModel;
   OnBoardContainer({
     required this.onBoardModel,
     super.key,
   });
+  OnBoardModel onBoardModel;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(10),
       child: Container(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -200,10 +206,11 @@ class OnBoardSecondView extends StatelessWidget {
   Widget build(BuildContext context) {
     return OnBoardContainer(
       onBoardModel: OnBoardModel(
-          description:
-              "İlgini çeken etkinliklere katıl veya kendi etkinliğini oluşturarak ortak zevklere sahip insanlarla sosyalleş!",
-          image: "assets/images/onboard_image_2.json",
-          headline: "İlgi Alanlarına Göre Eşleş!"),
+        description:
+            'İlgini çeken etkinliklere katıl veya kendi etkinliğini oluşturarak ortak zevklere sahip insanlarla sosyalleş!',
+        image: 'assets/images/onboard_image_2.json',
+        headline: 'İlgi Alanlarına Göre Eşleş!',
+      ),
     );
   }
 }
@@ -215,10 +222,11 @@ class OnBoardThirdView extends StatelessWidget {
   Widget build(BuildContext context) {
     return OnBoardContainer(
       onBoardModel: OnBoardModel(
-          description:
-              "Kendine güvenli bir ortamda, yalnızca üniversite e-postası ile doğrulanmış kullanıcılarla tanış. Yeni arkadaşlıklar için ilk adımı at!",
-          image: "assets/images/onboard_image_3.json",
-          headline: "Güvenli ve Eğlenceli Bir Deneyim!"),
+        description:
+            'Kendine güvenli bir ortamda, yalnızca üniversite e-postası ile doğrulanmış kullanıcılarla tanış. Yeni arkadaşlıklar için ilk adımı at!',
+        image: 'assets/images/onboard_image_3.json',
+        headline: 'Güvenli ve Eğlenceli Bir Deneyim!',
+      ),
     );
   }
 }

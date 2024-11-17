@@ -3,9 +3,9 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../core/widgets/buttons/custom_elevated_button.dart';
-import '../../../core/widgets/buttons/custom_text_button.dart';
-import '../../../core/widgets/inputs/input_base.dart';
+import 'package:uni_social/core/widgets/buttons/custom_elevated_button.dart';
+import 'package:uni_social/core/widgets/buttons/custom_text_button.dart';
+import 'package:uni_social/core/widgets/inputs/input_base.dart';
 
 /// The `EditEmailSignupMBS` class is a Dart class that represents a widget for updating the user's email address in a mobile app.
 
@@ -27,53 +27,53 @@ class EditEmailSignupMBS extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(vertical: 39.h, horizontal: 10.w),
           child: Text(
-            " AppLocalizations.of(context)!.updateYourEmail,",
+            ' AppLocalizations.of(context)!.updateYourEmail,',
             style: Theme.of(context).textTheme.headlineMedium,
           ),
         ),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 20.w),
           child: Text(
-            "formatedEmailText {AppLocalizations.of(context)!.editEmail}",
+            'formatedEmailText {AppLocalizations.of(context)!.editEmail}',
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.bodyLarge,
           ),
         ),
-        Column(children: [
-          Padding(
-            padding: EdgeInsets.only(top: 10.0.h),
-            child: InputBase(
-              // isM  bsWidget: true,
-              // isSigninMail: false,
-              textEditingController: _emailController,
-              textFFType: InputType.email,
-              // focusNode: _phoneFocusNode,
+        Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.only(top: 10.0.h),
+              child: InputBase(
+                // isM  bsWidget: true,
+                // isSigninMail: false,
+                textEditingController: _emailController,
+                textFFType: InputType.email,
+                // focusNode: _phoneFocusNode,
+              ),
             ),
-          ),
-          Padding(
+            Padding(
               padding: EdgeInsets.only(top: 10.0.h, bottom: 20.0.h),
               child: CustomElevatedButton(
-                widget:
-                    // locator.get<UserAuthViewModel>().editEmailSignupState ==
-                    //         UserAuthEnum.idle
-                    const Text("AppLocalizations.of(context)!.updateMyEmail"),
-                // : Theme.of(context).buttonWhiteLoading,
-                customElevatedButtonType: CustomElevatedButtonType.normalButton,
                 onPressed: () async {
                   await _onPressed(context);
                 },
-              )),
-          CustomTextButton(
-            alignCenter: true,
-            btnText: "AppLocalizations.of(context)!.iGaveUp",
-            onPressed: () {
-              Navigator.pop(context);
-            },
-          ),
-          SizedBox(
-            height: Platform.isIOS ? 30.0.h : 15.0.h,
-          )
-        ])
+                child:
+                    // locator.get<UserAuthViewModel>().editEmailSignupState ==
+                    //         UserAuthEnum.idle
+                    const Text('AppLocalizations.of(context)!.updateMyEmail'),
+              ),
+            ),
+            CustomTextButton(
+              btnText: 'AppLocalizations.of(context)!.iGaveUp',
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
+            SizedBox(
+              height: Platform.isIOS ? 30.0.h : 15.0.h,
+            ),
+          ],
+        ),
       ],
     );
   }

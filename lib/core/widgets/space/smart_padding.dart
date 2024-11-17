@@ -6,26 +6,32 @@ import 'package:uni_social/core/extension/context_extension.dart';
 
 ///For scrollable pages, a smart padding to give the first page size as the screen size
 class SingleChildScrollViewWithSmartPadding extends StatelessWidget {
-  const SingleChildScrollViewWithSmartPadding({required this.child, super.key});
+  const SingleChildScrollViewWithSmartPadding(
+      {required this.child, this.smartPadding = true, super.key});
 
   ///Widget for SingleCSW child
   final Widget child;
+  final bool smartPadding;
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: ConstrainedBox(
-        constraints: BoxConstraints.tightFor(
-          height: context.screenHeightWithAppBar,
-        ),
-        child: Padding(
-          padding: EdgeInsets.only(
-            left: 10.w,
-            right: 10.w,
-            top: 88.0.h,
-            bottom: Platform.isIOS ? 41.0.h : 10.0.h,
+      child: SingleChildScrollView(
+        child: ConstrainedBox(
+          constraints: BoxConstraints.tightFor(
+            height: context.screenHeightWithAppBar,
           ),
-          child: child,
+          child: smartPadding
+              ? Padding(
+                  padding: EdgeInsets.only(
+                    left: 10.w,
+                    right: 10.w,
+                    top: 88.0.h,
+                    bottom: Platform.isIOS ? 41.0.h : 10.0.h,
+                  ),
+                  child: child,
+                )
+              : child,
         ),
       ),
     );

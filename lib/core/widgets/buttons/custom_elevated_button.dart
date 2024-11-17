@@ -21,15 +21,15 @@ mixin CustomElevatedButtonType {
 
 // ignore: must_be_immutable
 class CustomElevatedButton extends StatefulWidget {
-  final Widget widget;
+  final Widget child;
   bool alignCenter;
   final CustomElevatedButtonEnum customElevatedButtonType;
   final VoidCallback? onPressed;
   final double? padding;
 
   CustomElevatedButton({
-    required this.widget,
-    required this.customElevatedButtonType,
+    required this.child,
+    this.customElevatedButtonType = CustomElevatedButtonEnum.normalBtn,
     super.key,
     this.padding,
     this.onPressed,
@@ -61,19 +61,19 @@ class _CustomElevatedButtonState extends State<CustomElevatedButton> {
           foregroundColor: widget.customElevatedButtonType ==
                   CustomElevatedButtonEnum.whiteBtn
               ? MyColors.ivory
-              : WidgetColors.elevatedButtonMainColorLight,
+              : WidgetColors.elevatedButtonTextColor,
           backgroundColor: btnColor,
           fixedSize: widget.customElevatedButtonType ==
                   CustomElevatedButtonEnum.smallBtn
-              ? Size(176.5.w, 60.h)
-              : Size(373.w, 60.h),
+              ? Size(176.5.w, 40.h)
+              : Size(373.w, 40.h),
         ),
         onPressed: () {
           widget.onPressed != null ? widget.onPressed!() : null;
           _updateButtonColor();
         },
         child: Center(
-          child: widget.widget,
+          child: widget.child,
         ),
       ),
     );

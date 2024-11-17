@@ -11,6 +11,8 @@ import 'package:uni_social/feature/router/app_router.gr.dart';
 import 'package:uni_social/feature/views/authentication/sign_in/sign_in_view.dart';
 import 'package:uni_social/translations/locale_keys.g.dart';
 
+import 'package:uni_social/core/widgets/buttons/custom_elevated_button.dart';
+
 @RoutePage()
 class AuthView extends StatelessWidget {
   const AuthView({super.key});

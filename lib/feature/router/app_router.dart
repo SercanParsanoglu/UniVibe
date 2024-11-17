@@ -11,17 +11,18 @@ class AppRouter extends RootStackRouter {
       );
   @override
   List<AutoRoute> get routes => [
-        AutoRoute(
-          page: OnboardRoute.page,
-        ),
-        AutoRoute(
-          page: AuthRoute.page,
-        ),
+        AutoRoute(page: OnboardRoute.page),
+        AutoRoute(page: AuthRoute.page),
         AutoRoute(page: SignInRoute.page),
-        AutoRoute(page: SignUpRoute.page),
+        AutoRoute(
+          page: SignUpRoute.page,
+          initial: true,
+        ),
         AutoRoute(page: UniRoute.page),
-        AutoRoute(page: SignUpUserDetailRoute.page),
-        AutoRoute(page: MailConfirmationRoute.page, initial: true),
+        AutoRoute(
+          page: SignUpUserDetailRoute.page,
+        ),
+        AutoRoute(page: MailConfirmationRoute.page),
       ];
 }
 
