@@ -16,13 +16,13 @@ class AppRouter extends RootStackRouter {
         AutoRoute(page: SignInRoute.page),
         AutoRoute(
           page: SignUpRoute.page,
-          initial: true,
         ),
         AutoRoute(page: UniRoute.page),
         AutoRoute(
           page: SignUpUserDetailRoute.page,
         ),
         AutoRoute(page: MailConfirmationRoute.page),
+        AutoRoute(page: SwapRoute.page, initial: true),
       ];
 }
 

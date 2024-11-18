@@ -23,5 +23,13 @@ abstract class  LocaleKeys {
   static const signUpViewElevatedButton = 'signUpViewElevatedButton';
   static const signUpViewTextButton = 'signUpViewTextButton';
   static const signUpViewMailHintText = 'signUpViewMailHintText';
+  static const signUpUserDetailViewNameHintText = 'signUpUserDetailViewNameHintText';
+  static const signUpUserDetailViewLastNameHintText = 'signUpUserDetailViewLastNameHintText';
+  static const signUpUserDetailViewUniDepHintText = 'signUpUserDetailViewUniDepHintText';
+  static const signUpUserDetailViewGenderInputVal1 = 'signUpUserDetailViewGenderInputVal1';
+  static const signUpUserDetailViewGenderInputVal2 = 'signUpUserDetailViewGenderInputVal2';
+  static const signUpUserDetailViewGenderInputVal3 = 'signUpUserDetailViewGenderInputVal3';
+  static const signUpUserDetailViewGenderHintText = 'signUpUserDetailViewGenderHintText';
+  static const signUpUserDetailViewElevatedButton = 'signUpUserDetailViewElevatedButton';
 
 }

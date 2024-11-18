@@ -36,7 +36,15 @@ class CodegenLoader extends AssetLoader{
   "signInViewRememberPasswordButton": "Şifremi unuttum",
   "signUpViewElevatedButton": "Kayıt ol",
   "signUpViewTextButton": "Üniversitemde istiyorum",
-  "signUpViewMailHintText": "Mail adresi"
+  "signUpViewMailHintText": "Mail adresi",
+  "signUpUserDetailViewNameHintText": "İsim",
+  "signUpUserDetailViewLastNameHintText": "Soyisim",
+  "signUpUserDetailViewUniDepHintText": "Üniversite bölümü",
+  "signUpUserDetailViewGenderInputVal1": "Kadın",
+  "signUpUserDetailViewGenderInputVal2": "Erkek",
+  "signUpUserDetailViewGenderInputVal3": "Özel",
+  "signUpUserDetailViewGenderHintText": "Cinsiyet",
+  "signUpUserDetailViewElevatedButton": "Devam et"
 };
 static const Map<String,dynamic> tr = {
   "uniDating": "UniDating",
@@ -60,7 +68,15 @@ static const Map<String,dynamic> tr = {
   "signInViewRememberPasswordButton": "Şifremi unuttum",
   "signUpViewElevatedButton": "Kayıt ol",
   "signUpViewTextButton": "Üniversitemde istiyorum",
-  "signUpViewMailHintText": "Mail adresi"
+  "signUpViewMailHintText": "Mail adresi",
+  "signUpUserDetailViewNameHintText": "İsim",
+  "signUpUserDetailViewLastNameHintText": "Soyisim",
+  "signUpUserDetailViewUniDepHintText": "Üniversite bölümü",
+  "signUpUserDetailViewGenderInputVal1": "Kadın",
+  "signUpUserDetailViewGenderInputVal2": "Erkek",
+  "signUpUserDetailViewGenderInputVal3": "Özel",
+  "signUpUserDetailViewGenderHintText": "Cinsiyet",
+  "signUpUserDetailViewElevatedButton": "Devam et"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "tr": tr};
 }
