@@ -8,7 +8,6 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:uni_social/core/theme/light_theme/light_theme.dart';
-import 'package:uni_social/feature/model/user_model.dart';
 import 'package:uni_social/feature/provider/cache_user_provider.dart';
 import 'package:uni_social/feature/router/app_router.dart';
 import 'package:uni_social/locator.dart';
@@ -22,13 +21,16 @@ Future<void> main() async {
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   //ScreenUtilin düzgün entegre edilebilmesi için küçük bir bekletme
   await Future.delayed(const Duration(milliseconds: 150));
-  runApp(EasyLocalization(
+  runApp(
+    EasyLocalization(
       supportedLocales: const [Locale('tr'), Locale('en')],
       path: 'assets/translations',
       fallbackLocale: const Locale('tr'),
-      child: const MyApp()));
+      child: const MyApp(),
+    ),
+  );
 
-  var appDir = Platform.isAndroid
+  final appDir = Platform.isAndroid
       ? await getExternalStorageDirectory()
       : await getTemporaryDirectory();
   await Hive.initFlutter(appDir?.path);
@@ -52,7 +54,8 @@ class MyApp extends StatelessWidget {
       builder: (context, child) => MultiProvider(
         providers: [
           ChangeNotifierProvider<CacheUserProvider>(
-              create: (context) => locator.get<CacheUserProvider>()),
+            create: (context) => locator.get<CacheUserProvider>(),
+          ),
         ],
         child: MaterialApp.router(
           debugShowCheckedModeBanner: false,

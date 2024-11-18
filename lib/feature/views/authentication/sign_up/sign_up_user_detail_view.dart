@@ -1,17 +1,17 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:dropdown_search/dropdown_search.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:uni_social/core/extension/context_extension.dart';
 import 'package:uni_social/core/extension/theme_extension.dart';
-import 'package:uni_social/core/widgets/space/space.dart';
-import 'package:uni_social/feature/router/app_router.gr.dart';
+import 'package:uni_social/core/widgets/background_asset.dart';
 import 'package:uni_social/core/widgets/buttons/custom_elevated_button.dart';
-import 'package:uni_social/core/widgets/custom_elevated_button.dart';
+import 'package:uni_social/core/widgets/custom_card_auth.dart';
 import 'package:uni_social/core/widgets/inputs/input_base.dart';
 import 'package:uni_social/core/widgets/inputs/input_date.dart';
+import 'package:uni_social/core/widgets/space/space.dart';
 import 'package:uni_social/feature/constants/assets.dart';
-import 'package:uni_social/feature/router/app_router.dart';
+
+import 'package:uni_social/core/widgets/space/smart_padding.dart';
+import 'package:uni_social/translations/locale_keys.g.dart';
 
 @RoutePage()
 class SignUpUserDetailView extends StatefulWidget {
@@ -38,143 +38,74 @@ class _SignUpUserDetailViewState extends State<SignUpUserDetailView> {
 
   @override
   Widget build(BuildContext context) {
-    const selectedDomain = '@karabuk.edu.tr'; // Varsayılan domain
-
-    // Seçilebilir domain listesi
-    final domains = <String>[
-      // "@boun.edu.tr", // Boğaziçi Üniversitesi
-      // "@itu.edu.tr", // İstanbul Teknik Üniversitesi
-      // "@metu.edu.tr", // Orta Doğu Teknik Üniversitesi (ODTÜ)
-      // "@hacettepe.edu.tr", // Hacettepe Üniversitesi
-      // "@ankara.edu.tr", // Ankara Üniversitesi
-      // "@gsu.edu.tr", // Galatasaray Üniversitesi      "@gsu.edu.tr", // Galatasaray Üniversitesi
-      // "@gsu.edu.tr", // Galatasaray Üniversitesi
-      // "@gsu.edu.tr", // Galatasaray Üniversitesi
-      // "@gsu.edu.tr", // Galatasaray Üniversitesi
-      // "@istanbul.edu.tr", // İstanbul Üniversitesi
-      // "@bilkent.edu.tr", // Bilkent Üniversitesi
-      // "@sabanciuniv.edu", // Sabancı Üniversitesi
-      // "@ku.edu.tr", // Koç Üniversitesi
-      '@deu.edu.tr', // Dokuz Eylül Üniversitesi
-      '@karabuk.edu.tr', // Karabük Üniversitesi
-      '@yildiz.edu.tr', // Yıldız Teknik Üniversitesi
-      // "@selcuk.edu.tr", // Selçuk Üniversitesi
-      // "@cankaya.edu.tr", // Çankaya Üniversitesi
-    ];
-
     return Scaffold(
       appBar: AppBar(),
-      body: SingleChildScrollView(
-        child: ConstrainedBox(
-          constraints: BoxConstraints.tightFor(
-            height: Theme.of(context).cleanHeightWithAppbar,
-          ),
-          child: Stack(
-            children: [
-              const _Background(),
-              Padding(
-                padding: context.paddingLow,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(20.r),
-                        ),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(0.9), // Gölge rengi
-                            spreadRadius: 10, // Gölgenin yayılma miktarı
-                            blurRadius: 50, // Gölgenin bulanıklık seviyesi
-                            offset: const Offset(
-                              0,
-                              4,
-                            ), // Gölgenin yerleşimi (x, y)
-                          ),
-                        ],
-                      ),
-                      child: Padding(
-                        padding: context.paddingLow,
-                        child: Column(
-                          children: [
-                            Space(
-                              spaceValue: SpaceValue.xl50,
-                            ),
-                            Space(),
-                            InputBase(
-                              textFFType: InputEnum.basic,
-                              textEditingController: phoneController,
-                              hintText: 'İsim',
-                            ),
-                            Space(),
-                            InputBase(
-                              textFFType: InputEnum.basic,
-                              textEditingController: phoneController,
-                              hintText: 'Soyisim',
-                            ),
-                            Space(),
-                            InputBase(
-                              textFFType: InputEnum.basic,
-                              textEditingController: phoneController,
-                              hintText: 'Üniversite bölümü',
-                            ),
-                            Space(),
-                            InputDate(
-                              textEditingController: phoneController,
-                            ),
-                            // InputBase(
-                            //   textFFType: InputEnum.basic,
-                            //   textEditingController: phoneController,
-                            //   hintText: "Doğum tarihi",
-                            // ),
-                            Space(),
-                            InputBase(
-                              textFFType: InputEnum.gender,
-                              genderItems: const ['Kadın', 'Erkek', 'Özel'],
-                              textEditingController: phoneController,
-                              hintText: 'Cinsiyet',
-                            ),
-                            Space(
-                              spaceValue: SpaceValue.s20,
-                            ),
-                            CustomElevatedButton(
-                              child: const Text('Devam et'),
-                              onPressed: () {},
-                            ),
-                            Space(
-                              spaceValue: SpaceValue.s20,
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+      body: SingleChildScrollViewWithSmartPadding(
+        smartPadding: false,
+        child: Stack(
+          children: [
+            BackgroundAsset(
+              customAssets: CustomAssets.onboardBackground,
+            ),
+            CustomCardAuth(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Space(
+                    spaceValue: SpaceValue.m30,
+                  ),
+                  InputBase(
+                    textFFType: InputEnum.basic,
+                    textEditingController: phoneController,
+                    hintText: LocaleKeys.signUpUserDetailViewNameHintText.tr(),
+                  ),
+                  Space(),
+                  InputBase(
+                    textFFType: InputEnum.basic,
+                    textEditingController: phoneController,
+                    hintText:
+                        LocaleKeys.signUpUserDetailViewLastNameHintText.tr(),
+                  ),
+                  Space(),
+                  InputBase(
+                    textFFType: InputEnum.basic,
+                    textEditingController: phoneController,
+                    hintText:
+                        LocaleKeys.signUpUserDetailViewUniDepHintText.tr(),
+                  ),
+                  Space(),
+                  InputDate(
+                    textEditingController: phoneController,
+                  ),
+                  Space(),
+                  InputBase(
+                    textFFType: InputEnum.gender,
+                    genderItems: [
+                      LocaleKeys.signUpUserDetailViewGenderInputVal1.tr(),
+                      LocaleKeys.signUpUserDetailViewGenderInputVal2.tr(),
+                      LocaleKeys.signUpUserDetailViewGenderInputVal3.tr(),
+                    ],
+                    textEditingController: phoneController,
+                    hintText:
+                        LocaleKeys.signUpUserDetailViewGenderHintText.tr(),
+                  ),
+                  Space(
+                    spaceValue: SpaceValue.s20,
+                  ),
+                  CustomElevatedButton(
+                    child: Text(
+                        LocaleKeys.signUpUserDetailViewElevatedButton.tr()),
+                    onPressed: () {},
+                  ),
+                  Space(
+                    spaceValue: SpaceValue.s20,
+                  ),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
-    );
-  }
-}
-
-class _Background extends StatelessWidget {
-  const _Background({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Image.asset(
-      CustomAssets.onboardBackground,
-      width: ScreenUtil().screenWidth,
-      height: ScreenUtil().screenHeight -
-          ScreenUtil().statusBarHeight -
-          AppBar().preferredSize.height,
-      fit: BoxFit.cover,
     );
   }
 }
